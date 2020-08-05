@@ -1,10 +1,8 @@
-## FROM rocker/shiny
-FROM rocker/r-ver:3.6.3
-MAINTAINER Mark Edmondson (r@sunholo.com)
+FROM gcr.io/gcer-public/shiny-googleauthrdemo
 
 # install R package dependencies
 RUN apt-get update && apt-get install -y \
-    libssl-dev \
+    #libssl-dev \
     ## clean up
     && apt-get clean \ 
     && rm -rf /var/lib/apt/lists/ \ 
@@ -14,8 +12,9 @@ RUN apt-get update && apt-get install -y \
 RUN install2.r --error \ 
     -r 'http://cran.rstudio.com' \
     googleAuthR \
-    leaflet \
-    sp \
+    remotes \
+    ## leaflet \
+    ## sp \
     viridis \
     shinythemes \
     ##### add other CRAN packages
