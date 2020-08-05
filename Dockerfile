@@ -27,5 +27,5 @@ RUN install2.r --error \
 ## assume shiny app is in build folder /shiny
 COPY shiny-volcano/ /srv/shiny-server/shiny-volcano/
 
-CMD R -e "source('/srv/shiny-server/shiny-volcano/server.R')" \
-    R -e "source('/srv/shiny-server/shiny-volcano/ui.R')" \ 
+#CMD R -e "source('/srv/shiny-server/shiny-volcano/server.R')" \
+#    R -e "source('/srv/shiny-server/shiny-volcano/ui.R')" \ 
